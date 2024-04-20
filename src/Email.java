@@ -1,8 +1,6 @@
-
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 public class Email {
 
@@ -10,7 +8,7 @@ public class Email {
     private String password;
     private String nombre;
     private LocalDate fnac;
-    private ArrayList<Mensaje> bandejaentrada;
+    private ArrayList<Mensaje> bandejaEntrada;
 
     public Email(String direccion, String password, String nombre, LocalDate fnac) {
         this.direccion = direccion;
@@ -52,10 +50,10 @@ public class Email {
     }
 
     public ArrayList<Mensaje> getBandejaentrada() {
-        return bandejaentrada;
+        return bandejaEntrada;
     }
 
     public void setBandejaentrada(ArrayList<Mensaje> bandejaentrada) {
-        this.bandejaentrada = bandejaentrada;
+        this.bandejaEntrada = bandejaentrada;
     }
 }
