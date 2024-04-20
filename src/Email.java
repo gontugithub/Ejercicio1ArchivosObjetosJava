@@ -8,7 +8,7 @@ public class Email {
     private String password;
     private String nombre;
     private LocalDate fnac;
-    private ArrayList<Mensaje> bandejaEntrada;
+    private ArrayList<Mensaje> bandejaEntrada = new ArrayList<Mensaje>(0);
 
     public Email(String direccion, String password, String nombre, LocalDate fnac) {
         this.direccion = direccion;

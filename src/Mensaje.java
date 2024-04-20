@@ -48,5 +48,15 @@ public class Mensaje {
     public void setCuerpo(String cuerpo) {
         this.cuerpo = cuerpo;
     }
+
+    @Override
+    public String toString() {
+        return "Mensaje{" +
+                "direccionemisor='" + direccionemisor + '\'' +
+                ", direccionesenvio=" + direccionesenvio +
+                ", asunto='" + asunto + '\'' +
+                ", cuerpo='" + cuerpo + '\'' +
+                '}';
+    }
 }
 
