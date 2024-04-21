@@ -38,7 +38,7 @@ public class Gestor {
     }
 
     public int comprobarCredenciales(String direccion, String password){
-        boolean flag = true;
+        int posicionDireccion = -1;
 
         for (int i = 0; i < emailsRegistrados.size(); i++) {
 
@@ -46,16 +46,12 @@ public class Gestor {
                 // SE HA ENCONTRADO EL CORREO
                 if (emailsRegistrados.get(i).getPassword().equals(password)){
                     // CONTRASEÑA CORRECTA
-                    flag = false;
+                    posicionDireccion = i;
+                    break;
                 }
             }
         }
-
-        if (!flag){
-            return 0;
-        } else{
-            return -1;
-        }
+        return posicionDireccion;
     }
 
 

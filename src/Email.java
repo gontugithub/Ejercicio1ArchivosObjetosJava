@@ -17,6 +17,22 @@ public class Email {
         this.fnac = fnac;
     }
 
+    public void verBandejaEntrada(){
+
+        for (int i = 0; i < bandejaEntrada.size(); i++) {
+
+            System.out.print(bandejaEntrada.get(i).getDireccionemisor() + " | " + bandejaEntrada.get(i).getAsunto() + " | ");
+
+            if (bandejaEntrada.get(i).getCuerpo().length() >= 29){
+                System.out.println(bandejaEntrada.get(i).getCuerpo().substring(0,29) + "...");
+
+            } else {
+                System.out.println(bandejaEntrada.get(i).getCuerpo());
+            }
+
+        }
+    }
+
     public String getDireccion() {
         return direccion;
     }

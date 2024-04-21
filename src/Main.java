@@ -20,6 +20,8 @@ public class Main {
         destinatarios.add("juan@gmail.com");
 
         g1.enviarMensaje("gonzalo@gmail.com", destinatarios, "PDF CLASE", "Adjunto el pdf visto en clase, un saludo");
+        g1.enviarMensaje("gonzalo@gmail.com", destinatarios, "VIDEOJUEGOS", "Has visto el nuevo juego?");
+        g1.enviarMensaje("gonzalo@gmail.com", destinatarios, "ANIMALES", "Peligo de un animal en extincion, lo adoptamos ma g ?");
 
         destinatarios.clear();
         destinatarios.add("pepe@gmail.com");
@@ -40,16 +42,25 @@ public class Main {
         String in_direccion = sc.next();
         System.out.print("  CONTRASEÑA: ");
         String in_password = sc.next();
-        if ( g1.comprobarCredenciales(in_direccion,in_password) == 0 ){
-            // CREDENCIALES CORRECTAS
-            System.out.println("Iniciando sesion");
-        } else {
+        int posicionDireccion = 0;
+        if ( ( posicionDireccion = g1.comprobarCredenciales(in_direccion,in_password)) == -1 ){
+            // CREDENCIALES INCORRECTAS
             System.out.println("correo o contraseña incorrectos");
+
+        } else {
+            System.out.println("Iniciando sesion");
+            opcionesUsuario(g1.getEmailsRegistrados().get(posicionDireccion));
         }
 
+    }
 
-
-
+    private static void opcionesUsuario(Email direccion){
+        System.out.print("  VER BANDEJA DE ENTRADA (1)\n  ABRIR UN MENSAJE (2)\n  REDACTAR MENSAJE (3)\n  IMPRIMIR MENSAJE (4)\n   > ");
+        switch (sc.nextInt()){
+            case 1:
+                direccion.verBandejaEntrada();
+                break;
+        }
     }
 
 
