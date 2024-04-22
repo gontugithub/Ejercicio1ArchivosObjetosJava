@@ -19,20 +19,27 @@ public class Email {
 
     public void verBandejaEntrada(){
 
-        for (int i = 0; i < bandejaEntrada.size(); i++) {
+        if (bandejaEntrada.size() == 0){
+            System.out.println("NO HAY MENSAJES");
+        } else {
 
-            System.out.print(bandejaEntrada.get(i).getDireccionemisor() + " | " + bandejaEntrada.get(i).getAsunto() + " | ");
+            for (int i = 0; i < bandejaEntrada.size(); i++) {
 
-            if (bandejaEntrada.get(i).getCuerpo().length() >= 29){
-                System.out.println(bandejaEntrada.get(i).getCuerpo().substring(0,29) + "...");
+                System.out.print(bandejaEntrada.get(i).getDireccionemisor() + " | " + bandejaEntrada.get(i).getAsunto() + " | ");
 
-            } else {
-                System.out.println(bandejaEntrada.get(i).getCuerpo());
+                if (bandejaEntrada.get(i).getCuerpo().length() >= 29){
+                    System.out.println(bandejaEntrada.get(i).getCuerpo().substring(0,29) + "...");
+
+                } else {
+                    System.out.println(bandejaEntrada.get(i).getCuerpo());
+                }
+
+                System.out.println(bandejaEntrada.get(i).getDireccionesenvio());
+
             }
-
-            System.out.println(bandejaEntrada.get(i).getDireccionesenvio());
-
         }
+
+
     }
 
     public void abrirMensaje(int posmensaje){
@@ -44,6 +51,7 @@ public class Email {
                 System.out.println("  - " + a);
             }
             System.out.println("ASUNTO: " + bandejaEntrada.get(posmensaje).getAsunto());
+            System.out.println("CUERPO: " + bandejaEntrada.get(posmensaje).getCuerpo());
         }
 
     }
