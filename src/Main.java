@@ -26,9 +26,8 @@ public class Main {
         destinatarios.clear();
         destinatarios.add("pepe@gmail.com");
 
-        g1.enviarMensaje("gonzalo@gmail.com", destinatarios, "PDF CLASE", "Adjunto el pdf visto en clase, un saludo");
 
-        System.out.println(g1.getEmailsRegistrados().get(0).getBandejaentrada().toString());
+        System.out.println(g1.getEmailsRegistrados().get(1).getBandejaentrada().toString());
 
 
         menuRegistro();
@@ -59,6 +58,11 @@ public class Main {
         switch (sc.nextInt()){
             case 1:
                 direccion.verBandejaEntrada();
+                break;
+
+            case 2 :
+                System.out.println("SELECCIONE EL NUMERO DE MENSAJE QUE QUIERE VER: ");
+                direccion.abrirMensaje(sc.nextInt());
                 break;
         }
     }

@@ -30,7 +30,22 @@ public class Email {
                 System.out.println(bandejaEntrada.get(i).getCuerpo());
             }
 
+            System.out.println(bandejaEntrada.get(i).getDireccionesenvio());
+
         }
+    }
+
+    public void abrirMensaje(int posmensaje){
+        if (posmensaje > bandejaEntrada.size() || posmensaje < 0){
+            System.out.println("MENSAJE QUE QUIERES SELECCIONAR INCORRECTO");
+        } else {
+            System.out.println("EMISOR: " + bandejaEntrada.get(posmensaje).getDireccionemisor() + "\nLISTA DESTINATARIOS:");
+            for (String a : bandejaEntrada.get(posmensaje).getDireccionesenvio()){
+                System.out.println("  - " + a);
+            }
+            System.out.println("ASUNTO: " + bandejaEntrada.get(posmensaje).getAsunto());
+        }
+
     }
 
     public String getDireccion() {
