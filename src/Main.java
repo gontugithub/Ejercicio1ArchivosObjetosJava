@@ -40,9 +40,9 @@ public class Main {
     private static void menuRegistro() {
 
         System.out.print("INTRODUZCA SUS CREDENCIALES:\n  CORREO: ");
-        String in_direccion = sc.next();
+        String in_direccion = sc.nextLine();
         System.out.print("  CONTRASEÑA: ");
-        String in_password = sc.next();
+        String in_password = sc.nextLine();
         int posicionDireccion = 0;
         if ( ( posicionDireccion = g1.comprobarCredenciales(in_direccion,in_password)) == -1 ){
             // CREDENCIALES INCORRECTAS
@@ -72,14 +72,19 @@ public class Main {
                     break;
 
                 case 3:
+                    // Limpiamos scanner
+                    sc.nextLine();
                     redactarMensaje(direccion);
                     break;
 
                 case 4:
+                    // Limpiamos scanner
+                    sc.nextLine();
                     menuRegistro();
                     flag = false;
                     break;
             }
+
 
         }  while (flag);
 
@@ -94,9 +99,9 @@ public class Main {
         String cuerpo = "";
         do {
             System.out.print("INTRODUZCA LA DIRECCION DE CORREO: ");
-            listadestinatarios.add(sc.next());
+            listadestinatarios.add(sc.nextLine());
             System.out.print("QUIERE AGREGAR MAS DIRECCIONES (S/N): ");
-            if (sc.next().toUpperCase().equals("N")){
+            if (sc.nextLine().toUpperCase().equals("N")){
                 flag = false;
             }
         } while (!flag);
